@@ -6,14 +6,20 @@
 
 ## Description
 
-| Command     | Description                                          |
-| ----------- | ---------------------------------------------------- |
-| `afk`         | Lock the screen                                      |
-| `emptytrash`  | Clean trash on primary HDD, clear quarantine logs    |
-| `flushdns`    | Clear local DNS cache                                |
-| `hidefiles`   | Hide hidden files in Finder                          |
-| `rmdsstore` | Remove .DS_Store files recursively in a directory      |
-| `showfiles` | Show hidden files in Finder                            |
+| Command                  | Description                                           |
+| ------------------------ | ----------------------------------------------------- |
+| `afk`                    | Lock the screen                                       |
+| `emptytrash`             | Clean trash on primary HDD, clear quarantine logs     |
+| `flushdns`               | Clear local DNS cache                                 |
+| `hidefiles`              | Hide hidden files in Finder                           |
+| `rmdsstore`              | Remove .DS_Store files recursively in a directory     |
+| `showfiles`              | Show hidden files in Finder                           |
+| `create_macos_bootstick` | Create a bootable memory stick from a macOS Installer |
+| `music`                  | CLI script to control Music application               |
+| `musicplaying`           | Print currently playing track in Music or Spotifiy    |
+| `tadd`                   | Add currently playing track to playlist               |
+| `tpurge`                 | Delete currently playing track from playlist          |
+| `usbcreator`             | Create a bootstick from an ISO file                   |
 
 ## Installation
 
@@ -30,5 +36,5 @@ git clone https://github.com/mrolli/macos-goodies.git ${ZDOTDIR:-~}/.zplugins/ma
 Then, in your .zshrc, add the following line:
 
 ```zsh
-source ${ZDOTDIR:-~}/.zplugins/macos-goodies/macos-goodies.zsh
+source ${ZDOTDIR:-~}/.zplugins/macos-goodies/macos-goodies.plugin.zsh
 ```
