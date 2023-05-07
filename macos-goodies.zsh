@@ -7,15 +7,12 @@
 # - https://github.com/sorin-ionescu/prezto/tree/master/modules/osx
 ###
 
-#
 # Requirements
-#
-
 [[ "$OSTYPE" == darwin* ]] || return 1
 
-#
 # Init
-#
-
 fpath=(${0:A:h}/functions $fpath)
 autoload -U $fpath[1]/*(.:t)
+
+# Setup shell completions
+compdef _music music
