@@ -1,5 +1,6 @@
-#!/usr/bin/osascript
-on run
+#!/usr/bin/env zsh
+
+osascript <<EOD
   if application "Music" is running then
     tell application "Music"
       if class of current playlist is not user playlist then return
@@ -17,4 +18,4 @@ on run
       set display to "Removed \"" & track_artist & " - " & track_name & "\" from playlist " & playlist_name
     end tell
   end if
-end run
+EOD

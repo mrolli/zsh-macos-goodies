@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 [ $# != 2 ] && echo "Usage: usbcreator bootable.iso /dev/rdisk1" && exit 1
 

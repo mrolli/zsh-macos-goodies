@@ -1,7 +1,7 @@
-#!/usr/bin/osascript
+#!/usr/bin/env zsh
 
-on run
-    tell application "System Events"
-        key code 12 using {control down, command down}
-    end tell
-end run
+osascript <<EOD
+  tell application "System Events"
+    key code 12 using {control down, command down}
+  end tell
+EOD

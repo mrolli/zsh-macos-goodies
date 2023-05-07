@@ -1,5 +1,6 @@
-#!/usr/bin/osascript
-on run
+#!/usr/bin/env zsh
+
+osascript <<EOD
   if application "Music" is running and application "Spotify" is not running then
     tell application "Music"
       if player state is stopped then
@@ -11,9 +12,9 @@ on run
         set seconds_played to player position
         set state to ""
         if player state is paused then
-            set state to " "
+          set state to " "
         else
-            set state to "契"
+          set state to " "
         end if
 
         set display to state & track_artist & " - " & track_name & " - " & (round ((seconds_played / track_duration) * 100)) & "%"
@@ -30,9 +31,9 @@ on run
         set seconds_played to player position
         set state to ""
         if player state is paused then
-            set state to " "
+          set state to " "
         else
-            set state to "契"
+          set state to " "
         end if
 
         set display to state & track_artist & " - " & track_name
@@ -54,9 +55,9 @@ on run
           set seconds_played to player position
           set state to ""
           if player state is paused then
-              set state to " "
+            set state to " "
           else
-              set state to "契"
+            set state to " "
           end if
 
           set display to state & track_artist & " - " & track_name
@@ -64,29 +65,29 @@ on run
       end tell
     else if MusicState is "playing" and (spotifyState is "paused" or spotifyState is "stopped") then
       tell application "Music"
-        if player state is stopped then
-          set display to "No Track Playing"
+      if player state is stopped then
+        set display to "No Track Playing"
+      else
+        set track_artist to artist of current track
+        set track_name to name of current track
+        set track_duration to duration of current track
+        set seconds_played to player position
+        set state to ""
+        if player state is paused then
+          set state to " "
         else
-          set track_artist to artist of current track
-          set track_name to name of current track
-          set track_duration to duration of current track
-          set seconds_played to player position
-          set state to ""
-          if player state is paused then
-              set state to " "
-          else
-              set state to "契"
-          end if
-
-          set display to state & track_artist & " - " & track_name & " - " & (round ((seconds_played / track_duration) * 100)) & "%"
+          set state to " "
         end if
-      end tell
-    else if (MusicState is "paused" or MusicState is "stopped") and spotifyState is "paused" then
-      set display to "No Track Playing"
-    else
-      set display to "Crazyman!!!!"
-    end if
+
+        set display to state & track_artist & " - " & track_name & " - " & (round ((seconds_played / track_duration) * 100)) & "%"
+      end if
+    end tell
+  else if (MusicState is "paused" or MusicState is "stopped") and spotifyState is "paused" then
+    set display to "No Track Playing"
   else
-    set display to "No music app is running"
+    set display to "Crazyman!!!!"
   end if
-end run
+else
+  set display to "No music app is running"
+end if
+EOD
