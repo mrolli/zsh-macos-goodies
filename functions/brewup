@@ -35,7 +35,7 @@ echo "[ ${fg[blue]}..${reset_color} ] Running brew doctor"
 brew doctor
 
 if [ "${1}" = "-f" ] || prompt_confirm "Shall I upgrade AppStore apps?"; then
-  if command -v masdfas &>/dev/null 2>&1; then
+  if command -v mas &>/dev/null 2>&1; then
     echo "[ ${fg[blue]}..${reset_color} ] Running mas upgrade"
     mas upgrade
   else
