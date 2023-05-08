@@ -21,7 +21,7 @@ function music() {
   next | previous)
     opt="$opt track"
     ;;
-  vol)
+  vol | volume)
     local new_volume volume=$(osascript -e "tell application \"$APP_NAME\" to get sound volume")
     if [ $# -eq 0 ]; then
       echo "Current volume is ${volume}."
