@@ -17,7 +17,6 @@
 | `showfiles`              | Show hidden files in Finder                           |
 | `create_macos_bootstick` | Create a bootable memory stick from a macOS Installer |
 | `music`                  | CLI script to control Music application               |
-| `musicplaying`           | Print currently playing track in Music or Spotifiy    |
 | `tadd`                   | Add currently playing track to playlist               |
 | `tpurge`                 | Delete currently playing track from playlist          |
 | `usbcreator`             | Create a bootstick from an ISO file                   |
