@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# See https://www.defaults-write.com/speed-up-time-machine-backups/
+sudo sysctl debug.lowpri_throttle_enabled=1
