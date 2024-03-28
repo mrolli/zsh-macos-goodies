@@ -9,6 +9,7 @@
 | Command                  | Description                                           |
 | ------------------------ | ----------------------------------------------------- |
 | `afk`                    | Lock the screen                                       |
+| `azsubsiwtch`          | Switch Azure subscription                             |
 | `brewup`                 | Update Homebrew and AppStore                          |
 | `emptytrash`             | Clean trash on primary HDD, clear quarantine logs     |
 | `flushdns`               | Clear local DNS cache                                 |
