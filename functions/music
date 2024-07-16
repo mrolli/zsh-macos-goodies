@@ -75,7 +75,7 @@ EOF
     local state=$1
 
     if [[ -n "$state" && ! "$state" =~ (on|off|toggle) ]]; then
-      echo "Usage: $(basename $0) shuffle [on|off|toggle]. Invalid option ${state}"
+      echo "Usage: $(basename $0) shuffle [on|off|toggle]. Invalid option: ${state}"
       return 1
     fi
 
@@ -87,24 +87,26 @@ EOF
               set shuffle enabled to $state
             end tell
 EOF
-      return 0
       ;;
-    toggle | *)
+    toggle)
       osascript >/dev/null 2>&1 <<EOF
             tell application "Music"
               if shuffle enabled is true then
                 set shuffle enabled to false
-                set display to "Shuffle is now disabled"
               else
                 set shuffle enabled to true
-                set display to "Shuffle is now enabled"
               end if
             end tell
 EOF
-      return 0
-      ;;
     esac
+
+    # Print current shuffle state in either case
+    shufstate=$(osascript -e "tell application \"$APP_NAME\" to get shuffle enabled")
+    [[ $shufstate = "true" ]] && shufstate="on" || shufstate="off"
+    echo "Shuffle is now $shufstate"
+    return 0
     ;;
+
   "" | help | -h | --help)
     print_usage
     return 0
@@ -126,8 +128,8 @@ Available commands:
   launch|play|pause|stop|rewind|resume|quit
   mute|unmute                      Mute or unmute $APP_NAME
   next|previous                    Play next or previous track
-  shuf|shuffle    [on|off|toggle]  Set shuffled playback. Default: toggle. Note: toggle doesn't support the MiniPlayer.
-  vol|volume      [0-100|up|down]  Get or set the volume. 0 to 100 sets the volume. 'up' / 'down' increases / decreases by 10 points. No argument displays current volume.
+  shuf|shuffle    [on|off|toggle]  Set shuffled playback state. No argument displays current shuffle state.
+  vol|volume      [0-100|up|down]  Set the volume. 0 to 100 sets the volume. 'up' / 'down' by 10 points. No argument displays current volume.
   playing|status                   Show what song is currently playing in Music.
   playlist        [playlist name]  Play specific playlist
 
