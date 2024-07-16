@@ -19,7 +19,7 @@
 | `speedup_timemachine`    | Run Time Machine backups with normal user priority    |
 | `speeddown_timemachine`  | Run Time Machine backups with lower priority again    |
 | `create_macos_bootstick` | Create a bootable memory stick from a macOS Installer |
-| `music`                  | CLI script to control Music application               |
+| `music`                  | CLI script to control the Music application         |
 | `tadd`                   | Add currently playing track to playlist               |
 | `tpurge`                 | Delete currently playing track from playlist          |
 | `usbcreator`             | Create a bootstick from an ISO file                   |
