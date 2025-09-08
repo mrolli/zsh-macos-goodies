@@ -13,9 +13,7 @@
 | `brewup`                 | Update Homebrew and AppStore                          |
 | `emptytrash`             | Clean trash on primary HDD, clear quarantine logs     |
 | `flushdns`               | Clear local DNS cache                                 |
-| `hidefiles`              | Hide hidden files in Finder                           |
 | `rmdsstore`              | Remove .DS_Store files recursively in a directory     |
-| `showfiles`              | Show hidden files in Finder                           |
 | `speedup_timemachine`    | Run Time Machine backups with normal user priority    |
 | `speeddown_timemachine`  | Run Time Machine backups with lower priority again    |
 | `create_macos_bootstick` | Create a bootable memory stick from a macOS Installer |
